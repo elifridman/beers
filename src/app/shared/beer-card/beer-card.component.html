@@ -1,0 +1,31 @@
+<div class="card beer-card">
+  <img (click)="onShowDetails()" [src]="card.image_url" class="card-img-top beer-img" alt="...">
+  <div class="card-body">
+    <div *ngIf="isShowRating" ngbDropdown>
+      <button
+        type="button"
+        class="btn btn-outline-primary rate-toggle-btn"
+        id="rating-dropdown" ngbDropdownToggle>
+        <span>{{currentRateSelection.text}}</span>
+      </button>
+      <div ngbDropdownMenu aria-labelledby="rating-dropdown">
+        <button (click)="onRating(dropDownSelection)" ngbDropdownItem>
+          <span>{{dropDownSelection.text}}</span>
+        </button>
+        <button *ngFor="let rate of ratings" (click)="onRating(rate)" ngbDropdownItem>
+          <span class="rate-img-wrapper"><span>{{rate.text}}</span><img class="rate-image" [src]="'./assets/images/svg/'+ rate.iconUrl"></span>
+        </button>
+      </div>
+    </div>
+    <h5 class="card-title">{{card.name}}</h5>
+    <p class="card-text">{{card.description |  slice:0:80 }}... </p>
+    <a (click)="onShowDetails()" class="btn btn-primary beer-card-btn">details</a>
+    <a (click)="setIsFavorite(card)" class="btn btn-primary beer-card-btn">
+      {{card.isFavorite ? 'Favorite Beer' : 'Choose As Favorite'}}
+      <img [src]="card.isFavorite? './assets/images/svg/jar-of-beer-full.svg ': './assets/images/svg/jar-of-beer.svg'"
+           class="card-img favorite-image"
+           alt="favorite">
+    </a>
+
+  </div>
+</div>

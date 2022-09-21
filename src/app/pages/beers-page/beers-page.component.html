@@ -1,0 +1,23 @@
+<div class="container-fluid page-wrapper">
+  <!-- PAGE INFO -->
+  <h1>{{pageInfo.title}}</h1>
+  <p>{{pageInfo.description}}</p>
+
+  <!-- SEARCH INPUT -->
+  <app-search-field
+    *ngIf="pageInfo.isSearch"
+    (onSearchButtonClicked)="onSearchButtonClicked($event)"
+  ></app-search-field>
+  <!-- BEER CARD LIST -->
+  <app-beer-card-list
+    *ngIf="beers"
+    [paginatorCurrentPage]="paginatorCurrentPage"
+    [paginatorPageSize]="paginatorPageSize"
+    [paginatorCollectionSize]="paginatorCollectionSize"
+    [beerCards]="beerList"
+    [isShowRating] = "pageInfo.isShowRank"
+    (pagingChange)="onPagingChange($event)"
+    (showCardDetails)="onShowCardDetails($event)"
+    (toggleFavoriteCard)="toggleFavoriteBeer($event)" (rateCard)="onRateBeer($event)">
+  </app-beer-card-list>
+</div>

@@ -1,0 +1,26 @@
+:host{
+
+}
+.beer-card {
+  width: 400px;
+  padding: 20px;
+  .beer-img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+  }
+  .favorite-image {
+    width: 15px;
+  }
+  .beer-card-btn {
+    margin: 4px;
+  }
+  .faCoffee{
+    font-family: "Font Awesome 5 Free", Open Sans;
+    font-weight:501;
+  }
+    .rate-img {
+      width: 24px;
+    }
+}
+

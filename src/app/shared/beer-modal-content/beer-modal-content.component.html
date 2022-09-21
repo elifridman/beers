@@ -1,0 +1,11 @@
+<div class="card beer-card-details">
+  <h5 class="card-header beer-details-header">{{beer.tagline}}</h5>
+  <img [src]="beer.image_url" class="card-img-top beer-details-img" [alt]="beer.name">
+  <div class="card-body beer-details-body">
+    <h2 class="card-title beer-details-title">{{beer.name}}</h2>
+    <p><b>A Bit of Info About The Beer:</b></p>
+    <p class="card-text beer-details-text">{{beer.description}}</p>
+    <p><b>{{beer.name}} Beer Go With This Food:</b></p>
+    <p class="card-text beer-details-text">{{beer.food_pairing}}</p>
+  </div>
+</div>
